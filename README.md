@@ -1,11 +1,5 @@
 # Box-Filteration
 Box Filtration technique for Topological Data Analysis
-## Box Cover ##
-<img src="images/paperExample/inputExample.svg" width="25%" height="25%" title="introduction"/> <br />
-<img src="images/paperExample/alpha_0d6/2dBinDataPlot_filter_5_alpha_0d6.JPG" width="22%" height="22%" title="cover"/> <img src="images/paperExample/alpha_0d6/2dBinDataPlot_filter_6_alpha_0d6.JPG" width="22%" height="22%" title="cover"/> <img src="images/paperExample/alpha_0d6/2dBinDataPlot_filter_11_alpha_0d6.JPG" width="22%" height="22%" title="cover"/> <img src="images/paperExample/alpha_0d6/2dBinDataPlot_filter_12_alpha_0d6.JPG" width="22%" height="22%" title="cover"/> <br />
-<img src="images/paperExample/alpha_0d6/nerve_5.JPG" width="25%"title="nerve_5"/> <img src="images/paperExample/alpha_0d6/nerve_6.JPG" width="25%" title="nerve_6"/> <br />
-
-## Persistence ##
 
 ## Mapper ##  
 
