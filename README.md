@@ -2,7 +2,7 @@
 Box Filtration technique for Topological Data Analysis
 
 ## Box Cover ##
-<img src="images/paperExample/alpha_0d6/2dBinDataPlot_filter_5_alpha_0d6.JPG" width="22%" height="22%" title="cover"/>
+<img src="https://github.com/pragup/Box-Filteration/images/paperExample/alpha_0d6/2dBinDataPlot_filter_5_alpha_0d6.JPG" width="22%" height="22%" title="cover"/>
 <img src="images/paperExample/alpha_0d6/2dBinDataPlot_filter_6_alpha_0d6.JPG" width="22%" height="22%" title="cover"/>
 <img src="images/paperExample/alpha_0d6/2dBinDataPlot_filter_11_alpha_0d6.JPG" width="22%" height="22%" title="cover"/> 
 <img src="images/paperExample/alpha_0d6/2dBinDataPlot_filter_12_alpha_0d6.JPG" width="22%" height="22%" title="cover"/> <br />
