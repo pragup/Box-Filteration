@@ -5,11 +5,12 @@ instead of growing balls we grow hypercubes with directional control over its ex
 ## Box Cover ##
 Following example shows a toy problem of 3 points to demonstrate expansion of boxes and their corresponding nerves. 
 For details checkout **examples/paper_example**.
+
 <img src="images/paperExample/alpha_0d6/2dBinDataPlot_filter_5_alpha_0d6.JPG" width="22%" height="22%" title="cover"/> <img src="images/paperExample/alpha_0d6/2dBinDataPlot_filter_6_alpha_0d6.JPG" width="22%" height="22%" title="cover"/> <img src="images/paperExample/alpha_0d6/2dBinDataPlot_filter_11_alpha_0d6.JPG" width="22%" height="22%" title="cover"/> <img src="images/paperExample/alpha_0d6/2dBinDataPlot_filter_12_alpha_0d6.JPG" width="22%" height="22%" title="cover"/> <br />
 <img src="images/paperExample/alpha_0d6/nerve_5.JPG" width="22%" title="nerve_5"/> <img src="images/paperExample/alpha_0d6/nerve_6.JPG" width="22%" title="nerve_6"/> <img src="images/paperExample/alpha_0d6/nerve_11.JPG" width="22%" title="nerve_11"/> <img src="images/paperExample/alpha_0d6/nerve_12.JPG" width="22%" title="nerve_12"/> <br />
 
 ## Persistence ##
-Persistence diagram for box filteration with various values of parameter alpha = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9] for a given 2d point cloud. For details checkout examples/circle_2. Other examples 
+Persistence diagram for box filteration with various values of parameter alpha = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9] for a given 2d point cloud. For details checkout **examples/circle_2**. Other examples 
 with various data distribution of circles are shown in **examples/circle_1,examples/circle_3, examples/circle_4**.  
 
 
