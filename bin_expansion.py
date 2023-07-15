@@ -71,17 +71,17 @@ class expansion:
 
                     [newBinTemp_, newObjectiveCost_] = self.genNewBin(oldBinTemp_, self.expansionBoxes[index_], pixelDict_,
                                              isInitialStep_)
-                    print("To Get solution close to largest optimal, we applied ", index__, "steps of optimization")
+                    # print("To Get solution close to largest optimal, we applied ", index__, "steps of optimization")
 
                     ### If new bin and  bin from previous step are  same  or last step then add new bin as expanded bin ###
 
                     if index__ > 0:
 
-                        print("old objective Cost", oldObjectiveCost_)
-                        print("new objective Cost", newObjectiveCost_)
+                        # print("old objective Cost", oldObjectiveCost_)
+                        # print("new objective Cost", newObjectiveCost_)
 
-                        print("oldBinTemp_", oldBinTemp_.getCoordLimits(), "newBinTemp_",
-                              newBinTemp_.getCoordLimits())
+                        # print("oldBinTemp_", oldBinTemp_.getCoordLimits(), "newBinTemp_",
+                        #       newBinTemp_.getCoordLimits())
 
                         if oldObjectiveCost_ < newObjectiveCost_:
 
@@ -170,7 +170,7 @@ class expansion:
                 possibleNewFilledPixelsToPointDict_.update({pixelKey_: pixel_.getDataPoints()})
 
 
-        print("possibleNewFilledPixelsToPointDict_", possibleNewFilledPixelsToPointDict_)
+        # print("possibleNewFilledPixelsToPointDict_", possibleNewFilledPixelsToPointDict_)
 
 
         newBin_, objectiveCost_ = self.modelConstrainAndSolveScipy(oldBin_, possibleNewFilledPixelsToPointDict_, pixelDict_, isInitialStep_)
@@ -440,7 +440,7 @@ class expansion:
             # print("variable cost", variableCost_)
             constrain["obj"][index__] = variableCost_
 
-        print("Objective Cofficient", constrain["obj"])
+        # print("Objective Cofficient", constrain["obj"])
 
         # Set Lower bounds of the variables #
         constrain["bound"] = [(-math.inf, math.inf) for index_ in range(numberOfVariables_)]
@@ -456,7 +456,7 @@ class expansion:
         indexTemp_ = 0
         totalWidth_ = 0
 
-        print("oldBin_.getCoordLimits() in constrain", oldBin_.getCoordLimits())
+        # print("oldBin_.getCoordLimits() in constrain", oldBin_.getCoordLimits())
 
         for coordLimit_ in oldBin_.getCoordLimits():
 
@@ -533,7 +533,7 @@ class expansion:
 
         ##############################################################################################################
 
-        print(" Started solving linear optimization ")
+        # print(" Started solving linear optimization ")
         t0 = time.clock();
         # Solve the problem
 
@@ -542,13 +542,13 @@ class expansion:
 
         t1 = time.clock();
 
-        print("Time taken to solve the problem", t1 - t0)
+        # print("Time taken to solve the problem", t1 - t0)
 
         output = {"X": opt.x, "obj": opt.fun, "time_taken": t1 - t0}
 
-        print("possibleNewFilledPixels_ in constrain", possibleNewFilledPixels_)
-        print("output of linear program", output["X"])
-        print("Objective Value", output["obj"])
+        # print("possibleNewFilledPixels_ in constrain", possibleNewFilledPixels_)
+        # print("output of linear program", output["X"])
+        # print("Objective Value", output["obj"])
 
         # Write a new bin and return it.
 

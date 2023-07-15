@@ -5,6 +5,8 @@ import vr_filteration_tool as vft
 import pandas as pd
 import os
 import shutil
+import json
+import utils
 
 gd.persistence_graphical_tools._gudhi_matplotlib_use_tex=False
 
@@ -44,7 +46,13 @@ maxDimSimplex_ = 2
 
 fileName_ = "output_vr/persistence.pdf"
 vrComplex_ = vft.vrFunction(data_, 2 * maxExtend_ * maxNumberExp_, maxDimSimplex_,write_visualize=False)
-ax = gd.plot_persistence_diagram(vrComplex_.persistence(), legend = True)
+
+ax = gd.plot_persistence_diagram(utils.homology_group(vrComplex_.persistence()), legend = True)
 ax.set_aspect("equal")  # forces to be square shaped
 plt.savefig(fileName_)
 plt.close()
+
+fileName_ = "output_vr/vrPersistenceEntropy.json"
+with open(fileName_, 'w') as fp:
+    dict = utils.persistence_entropy(vrComplex_.persistence())
+    json.dump(dict, fp)

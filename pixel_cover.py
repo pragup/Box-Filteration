@@ -115,12 +115,12 @@ class pixelCover:
 
             self.pixelDict.update({pixelKey_: pixelTemp_})
 
-        print("self.pixelDict", self.pixelDict)
+        # print("self.pixelDict", self.pixelDict)
 
-        for key_, pixel_ in self.pixelDict.items():
-
-            print("pixel centroid", key_)
-            print("pixel datapoints", pixel_.dataPoints)
+        # for key_, pixel_ in self.pixelDict.items():
+        #
+        #     print("pixel centroid", key_)
+        #     print("pixel datapoints", pixel_.dataPoints)
 
     def initialCoverGen(self, dataPoints_, use_clustering = False):
 
@@ -140,7 +140,7 @@ class pixelCover:
 
                 binIndex_ = binIndex_ + 1
 
-            print(" Total Number of cover elements", binIndex_)
+            # print(" Total Number of cover elements", binIndex_)
 
         else:
 
@@ -207,14 +207,14 @@ class pixelCover:
 
                         coverCount_ = coverCount_ + 1
 
-            print(" Total Number of cover elements", coverCount_)
-            print("Clustering ON: ", use_clustering)
+            # print(" Total Number of cover elements", coverCount_)
+            # print("Clustering ON: ", use_clustering)
 
             n_clusters_ = len(set(clustering_.labels_)) - (1 if -1 in clustering_.labels_ else 0)
 
-            print("Number of clusters", n_clusters_)
+            # print("Number of clusters", n_clusters_)
 
-            print("Number of outliers", coverCount_ - n_clusters_)
+            # print("Number of outliers", coverCount_ - n_clusters_)
 
     def initialCoverExpansion(self):
 
@@ -227,11 +227,11 @@ class pixelCover:
 
             self.cover[binIndex_].setExpansionBins(binExpansionTemp_.getExpansionBins())
 
-            print("linearExpansion_.getExpansionBoxes()", binExpansionTemp_.getExpansionBoxes())
+            # print("linearExpansion_.getExpansionBoxes()", binExpansionTemp_.getExpansionBoxes())
 
-            for bin_ in binExpansionTemp_.getExpansionBins():
-
-                print("expanded bin tight CoordLimit", bin_.getCoordLimits())
+            # for bin_ in binExpansionTemp_.getExpansionBins():
+            #
+            #     print("expanded bin tight CoordLimit", bin_.getCoordLimits())
 
 
     def getPixelDict(self):
