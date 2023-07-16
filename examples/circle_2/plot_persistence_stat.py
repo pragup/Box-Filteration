@@ -16,22 +16,9 @@ for filename in os.listdir(outputFolder_):
         print('Failed to delete %s. Reason: %s' % (file_path, e))
 
 params = np.round(np.arange(0.1, 1, 0.1), 1)
-y_name = "entropy"
-hgroup= 0
-plt = plot_entropy(params, y_name, hgroup=hgroup)
-filename = "plots/"+ y_name +"_" + "H_" + str(hgroup) + ".pdf"
-plt.savefig(filename)
-plt.close()
 
 y_name = "entropy"
 hgroup= 1
-plt = plot_entropy(params, y_name, hgroup=hgroup)
-filename = "plots/"+ y_name +"_" + "H_" + str(hgroup) + ".pdf"
-plt.savefig(filename)
-plt.close()
-
-y_name = "max_life_prob"
-hgroup= 0
 plt = plot_entropy(params, y_name, hgroup=hgroup)
 filename = "plots/"+ y_name +"_" + "H_" + str(hgroup) + ".pdf"
 plt.savefig(filename)
