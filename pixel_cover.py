@@ -254,8 +254,10 @@ def draw2DPoints(dataPoints_, fileName_, figureIndex_, pointColor_):
 
     plt.axis('scaled')
 
+    dataPoints_ = np.array(dataPoints_)
+    plt.xlim([min(dataPoints_[:, 0])-4, max(dataPoints_[:, 0])+4])
+    plt.ylim([min(dataPoints_[:, 1])-4, max(dataPoints_[:, 1])+4])
     fig_.savefig(fileName_, format="pdf", bbox_inches='tight', pad_inches=0.01)
-
     plt.close(fig_)
 
 

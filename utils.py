@@ -3,6 +3,11 @@ import numpy as np
 import matplotlib.pyplot as plt
 import json
 
+import sklearn.preprocessing
+from gudhi.wasserstein import wasserstein_distance
+from sklearn.preprocessing import normalize
+
+
 def homology_group(persistence, group=1):
     persistence_filter = []
     for point in persistence:
@@ -101,5 +106,79 @@ def plot_entropy(params, y_name, hgroup=1):
     plt.title("H_"+str(hgroup))
     return plt
 
-def plot_max_prob(hgroup=1):
-    pass
+def wasserstein_dist_btw_diagram(filename1, filename2, parameters=[], group=1):
+
+    with open(filename1, 'r') as myfile:
+        data = myfile.read()
+    # parse file
+    dict1 = json.loads(data)
+
+    with open(filename2, 'r') as myfile:
+        data = myfile.read()
+    # parse file
+    dict2 = json.loads(data)
+
+    wasserstein_dist = []
+    if len(parameters)>0:
+        for parameter in parameters:
+            temp1 = []
+            for point in dict1[str(parameter)]:
+                if point[0] == group:
+                    temp1.append([point[1][0], point[1][1]])
+            temp1 = normalize_life(temp1)
+            temp1 = np.array(temp1)
+
+            temp2 = []
+            for point in dict2[str(parameter)]:
+                if point[0] == group:
+                    temp2.append([point[1][0], point[1][1]])
+            temp2 = normalize_life(temp2)
+            temp2 = np.array(temp2)
+
+            cost, matchings = wasserstein_distance(temp1, temp2,  matching=True, order=2, internal_p=2)
+            wasserstein_dist.append(cost)
+        return wasserstein_dist
+
+    else:
+        temp1 = []
+        for point in dict1:
+            if point[0] == group:
+                temp1.append([point[1][0], point[1][1]])
+        temp1 = normalize_life(temp1)
+        temp1 = np.array(temp1)
+
+        temp2 = []
+        for point in dict2:
+            if point[0] == group:
+                temp2.append([point[1][0], point[1][1]])
+        temp2 = normalize_life(temp2)
+        temp2 = np.array(temp2)
+
+        cost, matchings = wasserstein_distance(temp1, temp2, matching=True, order=2, internal_p=2)
+        return cost
+
+def plot_wasserstein_distance(plt, filename1, filename2, y_name, color, parameters, group=1):
+
+    y = wasserstein_dist_btw_diagram(filename1, filename2, parameters=parameters, group=group)
+    if len(parameters)>0: plt.plot(parameters, y, color=color, linestyle='-', label=y_name)
+    else: plt.axhline(y=y, color=color, linestyle='-', label=y_name)
+    return plt
+
+def normalize_life(birth_death_pairs):
+    max_life = 0
+    life = []
+    birth = []
+    for p in birth_death_pairs:
+        birth.append(p[0])
+        life.append(p[1] - p[0])
+        if p[1] - p[0]> max_life:
+            max_life = p[1] - p[0]
+    birth = np.array(birth)
+    life = np.array(life)
+    birth = (birth - np.min(birth))/(np.max(birth) - np.min(birth))
+    life = (life - np.min(life)) / (np.max(life) - np.min(life))
+    norm_birth_death_pair = []
+    for k in range(len(birth_death_pairs)):
+        norm_birth_death_pair.append([birth[k], birth[k] + life[k]])
+
+    return norm_birth_death_pair

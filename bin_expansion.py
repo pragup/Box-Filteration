@@ -579,7 +579,7 @@ class expansion:
 
         newBinPixelDict_ = copy.deepcopy(oldBin_.getBinPixelDict())
 
-        print(" possible Filled Pixel list ", possibleNewFilledPixels_)
+        # print(" possible Filled Pixel list ", possibleNewFilledPixels_)
 
         for index_ in range(2 * self.dataDim, numberOfVariables_):
 

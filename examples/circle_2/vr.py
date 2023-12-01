@@ -55,3 +55,8 @@ fileName_ = "output_vr/vrPersistenceEntropy.json"
 with open(fileName_, 'w') as fp:
     dict = utils.persistence_entropy(vrComplex_.persistence())
     json.dump(dict, fp)
+
+fileName_ = "output_vr/vrPersistenceDiagram.json"
+with open(fileName_, 'w') as fp:
+    json.dump(utils.homology_group(vrComplex_.persistence()), fp)
+

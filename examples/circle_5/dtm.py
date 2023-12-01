@@ -46,7 +46,9 @@ pc.draw2DPoints(data_, fileName_, 1, "or")
 ##########################################################################
 ######################### DTM Filtration #################################
 ##########################################################################
-persistenceEntropy={}
+persistenceEntropy = {}
+persistenceDiagramDict = {}
+
 m = 0.1               # parameter of the DTM
 N = len(data_)    # number of points
 k = int(m*N)          # parameter of the DTMRipsComplex in gudhi
@@ -56,6 +58,7 @@ dtm_rips = gd.dtm_rips_complex.DTMRipsComplex(points=data_, k=k)  # DTM-Filtrati
 st_DTM = dtm_rips.create_simplex_tree(max_dimension=2)
 diagram_DTM = st_DTM.persistence()                               # compute the persistence diagram
 persistenceEntropy.update({str(m):utils.persistence_entropy(diagram_DTM)})
+persistenceDiagramDict.update({str(m):utils.homology_group(diagram_DTM)})
 
 # plot the persistence diagram
 ax = gd.plot_persistence_diagram(utils.homology_group(diagram_DTM), legend = True)
@@ -74,6 +77,7 @@ dtm_rips = gd.dtm_rips_complex.DTMRipsComplex(points=data_, k=k)  # DTM-Filtrati
 st_DTM = dtm_rips.create_simplex_tree(max_dimension=2)
 diagram_DTM = st_DTM.persistence()                               # compute the persistence diagram
 persistenceEntropy.update({str(m):utils.persistence_entropy(diagram_DTM)})
+persistenceDiagramDict.update({str(m):utils.homology_group(diagram_DTM)})
 
 # plot the persistence diagram
 ax = gd.plot_persistence_diagram(utils.homology_group(diagram_DTM), legend = True)
@@ -92,6 +96,7 @@ dtm_rips = gd.dtm_rips_complex.DTMRipsComplex(points=data_, k=k)  # DTM-Filtrati
 st_DTM = dtm_rips.create_simplex_tree(max_dimension=2)
 diagram_DTM = st_DTM.persistence()                               # compute the persistence diagram
 persistenceEntropy.update({str(m):utils.persistence_entropy(diagram_DTM)})
+persistenceDiagramDict.update({str(m):utils.homology_group(diagram_DTM)})
 
 # plot the persistence diagram
 ax = gd.plot_persistence_diagram(utils.homology_group(diagram_DTM), legend = True)
@@ -111,6 +116,7 @@ dtm_rips = gd.dtm_rips_complex.DTMRipsComplex(points=data_, k=k)  # DTM-Filtrati
 st_DTM = dtm_rips.create_simplex_tree(max_dimension=2)
 diagram_DTM = st_DTM.persistence()                               # compute the persistence diagram
 persistenceEntropy.update({str(m):utils.persistence_entropy(diagram_DTM)})
+persistenceDiagramDict.update({str(m):utils.homology_group(diagram_DTM)})
 
 # plot the persistence diagram
 ax = gd.plot_persistence_diagram(utils.homology_group(diagram_DTM), legend = True)
@@ -129,6 +135,7 @@ dtm_rips = gd.dtm_rips_complex.DTMRipsComplex(points=data_, k=k)  # DTM-Filtrati
 st_DTM = dtm_rips.create_simplex_tree(max_dimension=2)
 diagram_DTM = st_DTM.persistence()                               # compute the persistence diagram
 persistenceEntropy.update({str(m):utils.persistence_entropy(diagram_DTM)})
+persistenceDiagramDict.update({str(m):utils.homology_group(diagram_DTM)})
 
 # plot the persistence diagram
 ax = gd.plot_persistence_diagram(utils.homology_group(diagram_DTM), legend = True)
@@ -148,6 +155,7 @@ dtm_rips = gd.dtm_rips_complex.DTMRipsComplex(points=data_, k=k)  # DTM-Filtrati
 st_DTM = dtm_rips.create_simplex_tree(max_dimension=2)
 diagram_DTM = st_DTM.persistence()                               # compute the persistence diagram
 persistenceEntropy.update({str(m):utils.persistence_entropy(diagram_DTM)})
+persistenceDiagramDict.update({str(m):utils.homology_group(diagram_DTM)})
 
 # plot the persistence diagram
 ax = gd.plot_persistence_diagram(utils.homology_group(diagram_DTM), legend = True)
@@ -166,6 +174,7 @@ dtm_rips = gd.dtm_rips_complex.DTMRipsComplex(points=data_, k=k)  # DTM-Filtrati
 st_DTM = dtm_rips.create_simplex_tree(max_dimension=2)
 diagram_DTM = st_DTM.persistence()                               # compute the persistence diagram
 persistenceEntropy.update({str(m):utils.persistence_entropy(diagram_DTM)})
+persistenceDiagramDict.update({str(m):utils.homology_group(diagram_DTM)})
 
 # plot the persistence diagram
 ax = gd.plot_persistence_diagram(utils.homology_group(diagram_DTM), legend = True)
@@ -184,6 +193,7 @@ dtm_rips = gd.dtm_rips_complex.DTMRipsComplex(points=data_, k=k)  # DTM-Filtrati
 st_DTM = dtm_rips.create_simplex_tree(max_dimension=2)
 diagram_DTM = st_DTM.persistence()                               # compute the persistence diagram
 persistenceEntropy.update({str(m):utils.persistence_entropy(diagram_DTM)})
+persistenceDiagramDict.update({str(m):utils.homology_group(diagram_DTM)})
 
 # plot the persistence diagram
 ax = gd.plot_persistence_diagram(utils.homology_group(diagram_DTM), legend = True)
@@ -202,6 +212,7 @@ dtm_rips = gd.dtm_rips_complex.DTMRipsComplex(points=data_, k=k)  # DTM-Filtrati
 st_DTM = dtm_rips.create_simplex_tree(max_dimension=2)
 diagram_DTM = st_DTM.persistence()                               # compute the persistence diagram
 persistenceEntropy.update({str(m):utils.persistence_entropy(diagram_DTM)})
+persistenceDiagramDict.update({str(m):utils.homology_group(diagram_DTM)})
 
 # plot the persistence diagram
 ax = gd.plot_persistence_diagram(utils.homology_group(diagram_DTM), legend = True)
@@ -220,6 +231,7 @@ dtm_rips = gd.dtm_rips_complex.DTMRipsComplex(points=data_, k=k)  # DTM-Filtrati
 st_DTM = dtm_rips.create_simplex_tree(max_dimension=2)
 diagram_DTM = st_DTM.persistence()                               # compute the persistence diagram
 persistenceEntropy.update({str(m):utils.persistence_entropy(diagram_DTM)})
+persistenceDiagramDict.update({str(m):utils.homology_group(diagram_DTM)})
 
 # plot the persistence diagram
 ax = gd.plot_persistence_diagram(utils.homology_group(diagram_DTM), legend = True)
@@ -238,6 +250,7 @@ dtm_rips = gd.dtm_rips_complex.DTMRipsComplex(points=data_, k=k)  # DTM-Filtrati
 st_DTM = dtm_rips.create_simplex_tree(max_dimension=2)
 diagram_DTM = st_DTM.persistence()                               # compute the persistence diagram
 persistenceEntropy.update({str(m):utils.persistence_entropy(diagram_DTM)})
+persistenceDiagramDict.update({str(m):utils.homology_group(diagram_DTM)})
 
 # plot the persistence diagram
 ax = gd.plot_persistence_diagram(utils.homology_group(diagram_DTM), legend = True)
@@ -250,3 +263,7 @@ plt.close()
 fileName_ = "output_dtm/dtmPersistenceEntropy.json"
 with open(fileName_, 'w') as fp:
     json.dump(persistenceEntropy, fp)
+
+fileName_ = "output_dtm/dtmPersistenceDiagram.json"
+with open(fileName_, 'w') as fp:
+    json.dump(persistenceDiagramDict, fp)

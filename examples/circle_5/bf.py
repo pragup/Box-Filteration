@@ -45,6 +45,7 @@ pc.draw2DPoints(data_, fileName_, 1, "or")
 ###################### Box Complex Filtration ##################
 ################################################################
 persistenceEntropy={}
+persistenceDiagramDict = {}
 maxNumberExp_ = 201 # Maximum number of filterations
 maxExtend_ = 1  # It is \pi in the paper
 expansionRate_ = 0.1 # It is \alpha constant in the paper
@@ -75,6 +76,7 @@ weightedFilteredComplex_.initial(write_visualize=False)
 fileName_ = "output_bf/persistencewith_alpha_" + str(expansionRate_) + ".pdf"
 diagram_bf = weightedFilteredComplex_.getPersistence()
 persistenceEntropy.update({str(expansionRate_):utils.persistence_entropy(diagram_bf)})
+persistenceDiagramDict.update({str(expansionRate_):utils.homology_group(diagram_bf)})
 
 ax = gd.plot_persistence_diagram(utils.homology_group(diagram_bf), legend=True)
 ax.set_title("Persistence diagram with alpha = "+ str(expansionRate_))
@@ -116,6 +118,7 @@ weightedFilteredComplex_.initial(write_visualize=False)
 fileName_ = "output_bf/persistencewith_alpha_" + str(expansionRate_) + ".pdf"
 diagram_bf = weightedFilteredComplex_.getPersistence()
 persistenceEntropy.update({str(expansionRate_):utils.persistence_entropy(diagram_bf)})
+persistenceDiagramDict.update({str(expansionRate_):utils.homology_group(diagram_bf)})
 
 ax = gd.plot_persistence_diagram(utils.homology_group(diagram_bf), legend=True)
 ax.set_title("Persistence diagram with alpha = "+ str(expansionRate_))
@@ -157,6 +160,7 @@ weightedFilteredComplex_.initial(write_visualize=False)
 fileName_ = "output_bf/persistencewith_alpha_" + str(expansionRate_) + ".pdf"
 diagram_bf = weightedFilteredComplex_.getPersistence()
 persistenceEntropy.update({str(expansionRate_):utils.persistence_entropy(diagram_bf)})
+persistenceDiagramDict.update({str(expansionRate_):utils.homology_group(diagram_bf)})
 
 ax = gd.plot_persistence_diagram(utils.homology_group(diagram_bf), legend=True)
 ax.set_title("Persistence diagram with alpha = "+ str(expansionRate_))
@@ -197,6 +201,7 @@ weightedFilteredComplex_.initial(write_visualize=False)
 fileName_ = "output_bf/persistencewith_alpha_" + str(expansionRate_) + ".pdf"
 diagram_bf = weightedFilteredComplex_.getPersistence()
 persistenceEntropy.update({str(expansionRate_):utils.persistence_entropy(diagram_bf)})
+persistenceDiagramDict.update({str(expansionRate_):utils.homology_group(diagram_bf)})
 
 ax = gd.plot_persistence_diagram(utils.homology_group(diagram_bf), legend=True)
 ax.set_title("Persistence diagram with alpha = "+ str(expansionRate_))
@@ -237,6 +242,7 @@ weightedFilteredComplex_.initial(write_visualize=False)
 fileName_ = "output_bf/persistencewith_alpha_" + str(expansionRate_) + ".pdf"
 diagram_bf = weightedFilteredComplex_.getPersistence()
 persistenceEntropy.update({str(expansionRate_):utils.persistence_entropy(diagram_bf)})
+persistenceDiagramDict.update({str(expansionRate_):utils.homology_group(diagram_bf)})
 
 ax = gd.plot_persistence_diagram(utils.homology_group(diagram_bf), legend=True)
 ax.set_title("Persistence diagram with alpha = "+ str(expansionRate_))
@@ -277,6 +283,7 @@ weightedFilteredComplex_.initial(write_visualize=False)
 fileName_ = "output_bf/persistencewith_alpha_" + str(expansionRate_) + ".pdf"
 diagram_bf = weightedFilteredComplex_.getPersistence()
 persistenceEntropy.update({str(expansionRate_):utils.persistence_entropy(diagram_bf)})
+persistenceDiagramDict.update({str(expansionRate_):utils.homology_group(diagram_bf)})
 
 ax = gd.plot_persistence_diagram(utils.homology_group(diagram_bf), legend=True)
 ax.set_title("Persistence diagram with alpha = "+ str(expansionRate_))
@@ -317,6 +324,7 @@ weightedFilteredComplex_.initial(write_visualize=False)
 fileName_ = "output_bf/persistencewith_alpha_" + str(expansionRate_) + ".pdf"
 diagram_bf = weightedFilteredComplex_.getPersistence()
 persistenceEntropy.update({str(expansionRate_):utils.persistence_entropy(diagram_bf)})
+persistenceDiagramDict.update({str(expansionRate_):utils.homology_group(diagram_bf)})
 
 ax = gd.plot_persistence_diagram(utils.homology_group(diagram_bf), legend=True)
 ax.set_title("Persistence diagram with alpha = "+ str(expansionRate_))
@@ -357,6 +365,7 @@ weightedFilteredComplex_.initial(write_visualize=False)
 fileName_ = "output_bf/persistencewith_alpha_" + str(expansionRate_) + ".pdf"
 diagram_bf = weightedFilteredComplex_.getPersistence()
 persistenceEntropy.update({str(expansionRate_):utils.persistence_entropy(diagram_bf)})
+persistenceDiagramDict.update({str(expansionRate_):utils.homology_group(diagram_bf)})
 
 ax = gd.plot_persistence_diagram(utils.homology_group(diagram_bf), legend=True)
 ax.set_title("Persistence diagram with alpha = "+ str(expansionRate_))
@@ -398,6 +407,7 @@ weightedFilteredComplex_.initial(write_visualize=False)
 fileName_ = "output_bf/persistencewith_alpha_" + str(expansionRate_) + ".pdf"
 diagram_bf = weightedFilteredComplex_.getPersistence()
 persistenceEntropy.update({str(expansionRate_):utils.persistence_entropy(diagram_bf)})
+persistenceDiagramDict.update({str(expansionRate_):utils.homology_group(diagram_bf)})
 
 ax = gd.plot_persistence_diagram(utils.homology_group(diagram_bf), legend=True)
 ax.set_title("Persistence diagram with alpha = "+ str(expansionRate_))
@@ -408,3 +418,7 @@ plt.close()
 fileName_ = "output_bf/bfPersistenceEntropy.json"
 with open(fileName_, 'w') as fp:
     json.dump(persistenceEntropy, fp)
+
+fileName_ = "output_bf/bfPersistenceDiagram.json"
+with open(fileName_, 'w') as fp:
+    json.dump(persistenceDiagramDict, fp)
