@@ -1,7 +1,10 @@
-# Box-Filteration
+# Box-Filteration #
 Topolgical data analysis is used for complex data analysis. In general, we grow balls to understand topology of point cloud. We came up with a new technique where 
 instead of growing balls we grow hypercubes with directional control over its expansion. 
-
+# Installation #
+1. conda env create --prefix ./env -f .\environment.yml
+2. conda activate ./env
+3. Run the scripts in each of the examples
 ## Box Cover ##
 Following example shows a toy problem of 3 points to demonstrate expansion of boxes and their corresponding nerves. 
 For details checkout **examples/paper_example**.

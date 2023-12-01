@@ -1,11 +1,8 @@
 import gudhi as gd
 from collections import defaultdict
-import meshio
 import numpy as np
 import json
 from io import StringIO
-import sklearn.cluster as sc
-import copy
 
 class filtration:
 

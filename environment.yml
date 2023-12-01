@@ -1,0 +1,13 @@
+name: box-filteration
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - numpy
+  - scipy=1.11.4
+  - scikit-learn
+  - pandas
+  - gudhi
+  - matplotlib
+prefix: box-filteration

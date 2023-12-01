@@ -1,8 +1,6 @@
 from collections import defaultdict
 import math
-import copy
 import numpy as np
-import itertools
 import matplotlib.pyplot as plt
 import bin_expansion as be
 import sklearn.cluster as sc

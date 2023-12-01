@@ -2,10 +2,7 @@ from math import log
 import numpy as np
 import matplotlib.pyplot as plt
 import json
-
-import sklearn.preprocessing
 from gudhi.wasserstein import wasserstein_distance
-from sklearn.preprocessing import normalize
 
 
 def homology_group(persistence, group=1):

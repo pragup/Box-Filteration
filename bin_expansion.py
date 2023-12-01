@@ -4,9 +4,6 @@ import math
 import copy
 import pixel_cover as pc
 from scipy.optimize import linprog
-import cplex
-from cplex.exceptions import CplexError
-import sys
 import time
 
 class expansion:
@@ -327,11 +324,11 @@ class expansion:
     #     problem.linear_constraints.add(lin_expr=constrain["A"], senses=constrain["sense"], rhs=constrain["b"])
     #
     #     print(" Started solving linear optimization ")
-    #     t0 = time.clock();
+    #     t0 = time.perf_counter();
     #     # Solve the problem
     #     problem.solve()
     #     # problem.register_callback(SolveCallback)
-    #     t1 = time.clock();
+    #     t1 = time.perf_counter();
     #
     #     print("Time taken to solve the problem", t1 - t0)
     #
@@ -534,13 +531,13 @@ class expansion:
         ##############################################################################################################
 
         # print(" Started solving linear optimization ")
-        t0 = time.clock();
+        t0 = time.perf_counter()
         # Solve the problem
 
         opt = linprog(c=constrain["obj"], A_ub=constrain["A"], b_ub=constrain["b"], bounds = constrain["bound"],
                       method = "interior-point")
 
-        t1 = time.clock();
+        t1 = time.perf_counter()
 
         # print("Time taken to solve the problem", t1 - t0)
 
